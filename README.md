@@ -1,0 +1,1 @@
+# volatile-coin-mine
