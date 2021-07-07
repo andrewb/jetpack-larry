@@ -1,0 +1,15 @@
+{
+  "name": "jetpack-larry",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "ugly": "uglifyjs index.js -o ugly.js",
+    "pack": "regpack ugly.js > min.js",
+    "build": "yarn run ugly && yarn run pack"
+  },
+  "dependencies": {
+    "regpack": "^5.0.1",
+    "uglify-es": "^3.3.9"
+  }
+}
