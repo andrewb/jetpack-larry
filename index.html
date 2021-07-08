@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Andrew Berry" />
+    <meta name="description" content="JS1024 2021: &quot;Jetpack Larry&quot; -- Larry is back! Get the coins. Avoid the lasers." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="canonical" href="https://mock.xyz/jetpack-larry/" />
+    <meta property="og:title" content="Jetpack Larry - JS1024 2021" />
+    <meta property="og:description" content="JS1024 2021: &quot;Jetpack Larry&quot; -- Larry is back! Get the coins. Avoid the lasers." />
+    <meta property="og:image" content="https://mock.xyz/jetpack-larry/thumbnail.png" />
+    <meta property="og:url" content="https://mock.xyz/jetpack-larry/" />
+    <title>Jetpack Larry - JS1024 2021</title>
+    <style>
+      body, html {
+        margin: 0;
+        padding: 0;
+        font-family: "Helvetica", "Arial", sans-serif;
+        text-align: center;
+      }
+      a, a:visited {
+        color: #00f;
+        text-decoration: none;
+      }
+      a:hover {
+        color: #000;
+      }
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      header {
+        margin-bottom: 1em;
+      }
+      em {
+        color: #666;
+        font-size: 0.8em;
+      }
+      kbd {
+        padding: 5px;
+        font-family: "Menlo", "Courier New", monospace;
+        font-size: 0.8em;
+        display: inline-block;
+        min-width: 1em;
+        background: #ddd;
+        border-bottom: 2px solid #ccc;
+        vertical-align: middle;
+      }
+      .touch-bar {
+        position: fixed;
+        bottom: 1.5rem;
+        width: 100%;
+      }
+      .touch-bar-wrap {
+        padding: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+      }
+      .touch-button {
+        width: 8rem;
+        height: 5rem;
+        background: rgba(0, 0, 0, 0.2);
+        color: #fff;
+        font-size: 1.5rem;
+        line-height: 5rem;
+        border-radius: 2.5rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .arrow-up {
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 16px solid #fff;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div>
+        <header>
+          <h1>Jetpack Larry</h1>
+          <em><a href="https://js1024.fun/demos/2021#9">2021 JS1024 Entry</a> &ndash; <a href="https://github.com/andrewb/jetpack-larry/blob/master/min.js">1023 bytes</a></em>
+        </header>
+        <section>
+          <canvas id="canvas"></canvas>
+        </section>
+        <section>
+          <p>Get coins. Don't hit the lasers.</p>
+          <p class="keymap">Use <kbd class="key">Space Bar</kbd> to jump and <kbd class="key">s</kbd> to restart</p>
+          <p><small><a href="https://github.com/andrewb">Andrew Berry</a></small></p>
+        </section>
+      </div>
+    </main>
+    <div class="touch-bar" style="display: none;">
+      <div class="touch-bar-wrap">
+        <div id="touch-restart" class="touch-button" aria-label="restart">
+          <div>restart</div>
+        </div>
+        <div id="touch-jump" class="touch-button" aria-label="jump">
+          <div class="arrow-up"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Approx. JS1024 shim
+      let canvas = document.getElementById('canvas');
+      let ctx = canvas.getContext('2d');
+      window.a = canvas;
+      window.b = document.body;
+      window.c = ctx;
+      window.d = document;
+    </script>
+    <script>
+      window.addEventListener('keydown', e => {
+        if (e.which === 32) {
+          // Stop space from scrolling the page
+          e.preventDefault();
+        }
+      });
+    </script>
+    <script src="min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/andrewb/js1k-touch-controls/min.js"></script>
+  </body>
+</html>
