@@ -30,13 +30,13 @@ S = (a, x, y, w, s = 320) => {
     q = i % w;
     // Get color
     // 'a' = hair/feet
-    // 'b' = ground
+    // 'b' = skin
     // 'c' = body
     // 'd' = laser/coin
-    // 'e' = skin/cross/highlight
+    // 'e' = cross/highlight
     // 'f' = background 1
     // 'g' = background 2
-    h = '213567458fd5ffb68979a'.match(/.../g)[j.charCodeAt(0) - 97];
+    h = '213fdd457fd5ffb68a79b'.match(/.../g)[j.charCodeAt(0) - 97];
     c.fillStyle = '#' + h;
     h && c.fillRect(
       // Get x coord for 'pixel'
@@ -147,12 +147,12 @@ T = e => {
   S(
     [
       // Walking
-      'x2a3x3aex4e3x2aecx3aecx4c2x3ac2x4a2',
-      'x2a3x3aex4e3x2aecx3acex4c2xaxc3ax2a2',
-      'x3ax4a2x4aex4e3x2aecx3aecx4c3x2a2xa2',
-      'x2a3x3aex4e3x2aecx3ec2x4c2x2ac4xax2a2',
-      // eoosting
-      'x2a3x3aex4e3x2aecx3aecx3dc2x3ec2x4a2',
+      'x2a3x3abx4b3x2abcx3abcx4c2x3ac2x4a2',
+      'x2a3x3abx4b3x2abcx3acbx4c2xaxc3ax2a2',
+      'x3ax4a2x4abx4b3x2abcx3abcx4c3x2a2xa2',
+      'x2a3x3abx4b3x2abcx3bc2x4c2x2ac4xax2a2',
+      // Boosting
+      'x2a3x3abx4b3x2abcx3abcx3dc2x3ec2x4a2',
       // Dead
       'x2e2x4e2x2e9e3x2e2x4e2x4e2x4e2'
     ][
@@ -180,8 +180,8 @@ T = e => {
     5,
   );
   // Draw floor
-  S('b', 0, 280, 1);
-  // Text will have the same fill as floor
+  // The second char is used to set the color of the text
+  S('ce', 0, 280, 1);
   c.fillText(s, 10, 20);
   // Loop
   requestAnimationFrame(T);
