@@ -31,12 +31,12 @@ S = (a, x, y, w, s = 320) => {
     // Get color
     // 'a' = hair/feet
     // 'b' = skin
-    // 'c' = body
+    // 'c' = body/ground
     // 'd' = laser/coin
     // 'e' = cross/highlight
     // 'f' = background 1
     // 'g' = background 2
-    h = '213fdd457fd5ffb68a79b'.match(/.../g)[j.charCodeAt(0) - 97];
+    h = '213ca8457fd5ffb68a79b'.match(/.../g)[j.charCodeAt(0) - 97];
     c.fillStyle = '#' + h;
     h && c.fillRect(
       // Get x coord for 'pixel'
